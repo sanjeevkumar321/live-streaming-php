@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>bdfbh</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <img src="upload/a.png?" alt="ready" width="500" height="400" id="re" />
+  </body>
+  <script>
+    // function setImage() {
+    //   $("#img").attr("src", "upload/a.png");
+    // }
+    // window.setInterval(function () {
+    //   /// call your function here
+    //   setImage();
+    //   //   document.getElementById("img").innerHTML = location.reload();
+    // }, 1000);
+
+    var reimg;
+    window.onload = function () {
+      reimg = document.getElementById("re");
+      setInterval(function () {
+        reimg.src = reimg.src.replace(/\?.*/, function () {
+          return "?" + new Date();
+        });
+      }, 1000);
+    };
+  </script>
+</html>
